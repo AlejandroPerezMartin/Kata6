@@ -17,12 +17,12 @@ public class Kata6 {
         Connection connection = DriverManager.getConnection(url, username, password);
         Statement statement = connection.createStatement();
         ResultSet set = statement.executeQuery("select * from CAMBIO_EUR_A");
-        while (set.next()){
+        while (set.next()) {
             print(set);
         }
     }
-    
-    private static void print(ResultSet set) throws SQLException{
+
+    private static void print(ResultSet set) throws SQLException {
         System.out.print(set.getString("DIVISA") + " ");
         System.out.println(set.getBigDecimal("CAMBIO"));
     }
